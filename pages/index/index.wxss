@@ -1,0 +1,66 @@
+page {
+  background-color: #e6e6e6;
+  height: 100%;
+}
+
+/* 搜索框 */
+.search {
+  height: 60rpx;
+  padding: 10rpx;
+  background-color: #1296db;
+  display: flex;
+
+}
+
+.search>input {
+  height: 100%;
+  background-color: #fff;
+  border-radius: 15rpx;
+  color: #999999;
+  flex: 9;
+  margin: 0 10rpx;
+}
+
+.search>button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30rpx;
+  flex: 1;
+}
+
+/* 轮播图 */
+.index-swiper>swiper {
+  margin: 10rpx;
+  height: 400rpx;
+}
+
+.swiper-image {
+  width: 100%;
+}
+
+/* 场景 */
+.scene {
+  margin: 20rpx 15rpx;
+  background-color: #fff;
+  border-radius: 30rpx;
+}
+
+.name {
+  display: flex;
+  justify-content: center;
+  font-size: 50rpx;
+  font-weight: bold;
+  background-color: #1296db;
+}
+
+.record {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.record>view {
+  margin: 10rpx;
+  width: 40%;
+}

@@ -1,0 +1,115 @@
+<!-- pages/list/list.wxml -->
+<!-- 查询 -->
+<view class="search">
+  <input type="text" />
+  <button>查询</button>
+</view>
+<!-- 新增 -->
+<view class="add">
+  <button bindtap="tagDialog1">添加新场景</button>
+</view>
+<!-- 场景 -->
+<view class="scene" wx:for="{{roomList}}" wx:key="index">
+  <view class="head">
+    <view class="name">{{item.name}}</view>
+    <view class="delete" bindtap="delete" >
+      <image src="/static/del.png" mode="widthFix"></image>
+    </view>
+  </view>
+  <view class="record">
+    <view class="record-now">
+      <view class="item">当前数值</view>
+      <view>
+        <view>
+          <view>
+            <text>温度(℃): </text>
+            <text>{{item.wendu}}</text>
+          </view>
+          <view>
+            <text>光照度(lx/:lx=lm/㎡): </text>
+            <text>{{item.guangzhao}}</text>
+          </view>
+          <view>
+            <text>Co2(g/L): </text>
+            <text>{{item.co2}}</text>
+          </view>
+          <view>
+            <text>PM2.5(μg/m³): </text>
+            <text>{{item.PM}}</text>
+          </view>
+          <view>
+            <text>LED: </text>
+            <switch checked="{{item.LED}}"></switch>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="record-warn">
+      <view class="item">预警数值</view>
+      <view>
+        <view>
+          <view>
+            <text>温度(℃): </text>
+            <text>{{warnObj.wendu}}</text>
+          </view>
+          <view>
+            <text>光照度(lx/:lx=lm/㎡): </text>
+            <text>{{warnObj.guangzhao}}</text>
+          </view>
+          <view>
+            <text>Co2(g/L): </text>
+            <text>{{warnObj.co2}}</text>
+          </view>
+          <view>
+            <text>PM2.5(μg/m³): </text>
+            <text>{{warnObj.PM}}</text>
+          </view>
+          <view>
+            <text>LED: </text>
+            <switch checked="{{warnObj.LED}}"></switch>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<!-- 弹窗 -->
+<view class="dialog {{ showDialog ? 'dialog--show' : '' }}">
+  <view class="dialog-container">
+    <view style='padding:40rpx;'>
+      <view>
+        <view class="dialog-record">
+          <view>
+            <text>场景：</text>
+            <input  bindinput="bindKeyInput1" type="text" value="{{addObj.name}}" maxlength="5"/>
+          </view>
+          <view>
+            <text>温度(℃): </text>
+            <input  bindinput="bindKeyInput2" type="number" value="{{addObj.wendu}}" maxlength="5"/>
+          </view>
+          <view>
+            <text>光照度(lx/:lx=lm/㎡): </text>
+            <input  bindinput="bindKeyInput3" type="number" value="{{addObj.guangzhao}}" maxlength="5"/>
+          </view>
+          <view>
+            <text>Co2(g/L): </text>
+            <input  bindinput="bindKeyInput4" type="number" value="{{addObj.co2}}" maxlength="5"/>
+          </view>
+          <view>
+            <text>PM2.5(μg/m³): </text>
+            <input bindinput="bindKeyInput5" type="number" value="{{addObj.PM}}" maxlength="5"/>
+          </view>
+          <view>
+            <text>LED: </text>
+            <switch bindchange="switchChecked"></switch>
+          </view>
+        </view>
+        <view class="dialog-button">
+          <button style="width:200rpx;margin: 20rpx;" bindtap="tagDialog1">取消</button>
+          <button style="width:200rpx;margin: 20rpx;" bindtap="tagDialog2">确定</button>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

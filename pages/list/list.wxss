@@ -1,0 +1,120 @@
+page {
+  background-color: #e6e6e6;
+  height: 100%;
+}
+
+/* 搜索框 */
+.search {
+  height: 60rpx;
+  padding: 10rpx;
+  background-color: #1296db;
+  display: flex;
+
+}
+
+.search>input {
+  height: 100%;
+  background-color: #fff;
+  border-radius: 15rpx;
+  color: #999999;
+  flex: 9;
+  margin: 0 10rpx;
+}
+
+.search>button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30rpx;
+  flex: 1;
+}
+
+/* 新增 */
+.add {
+  margin: 20rpx;
+}
+
+/* 场景 */
+.scene {
+  margin: 20rpx 15rpx;
+  background-color: #fff;
+  border-radius: 30rpx;
+}
+
+.head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #1296db;
+  padding: 10rpx;
+}
+
+.name {
+  font-size: 50rpx;
+  font-weight: bold;
+}
+
+.delete>image {
+  width: 50rpx;
+  height: 50rpx;
+}
+
+.record {
+  display: flex;
+  justify-content: space-between;
+  padding: 10rpx;
+}
+
+.item {
+  font-size: 40rpx;
+  padding: 10rpx;
+}
+
+.record>view>view>view>view {
+  font-size: 26rpx;
+  padding: 10rpx;
+}
+/* 弹窗 */
+.dialog-mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10;
+  display: none;
+}
+
+.dialog-container {
+  position: fixed;
+  bottom: 400rpx;
+  width: 650rpx;    /*弹窗布局宽*/
+  height: 700rpx;   /*弹窗布局高，与下面弹出距离transform有关*/
+  margin-left: 50rpx;
+  background: #f8f8f8;
+  transform: translateY(300%);  /*弹框弹出距离，与弹框布局高度有关，如300%表示弹起距离为3倍弹窗高度 */
+  transition: all 0.4s ease;
+  z-index: 12;
+  border-radius: 20rpx;
+}
+
+.dialog--show .dialog-container {
+  transform: translateY(0);
+}
+
+.dialog--show .dialog-mask {
+  display: block;
+}
+
+.dialog-record>view>input{
+  background-color: #e6e6e6;
+}
+
+.dialog-button{
+  display: flex;
+  justify-content: space-between;
+  
+}
+.dialog-button>button{
+   background-color:#1296db ;
+}

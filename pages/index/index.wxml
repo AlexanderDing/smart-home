@@ -1,0 +1,59 @@
+<!-- 查询 -->
+<view class="search">
+  <input type="text" />
+  <button>查询</button>
+</view>
+
+<!-- 轮播图 -->
+<view class="index-swiper">
+  <swiper indicator-dots autoplay circular>
+    <swiper-item>
+      <block>
+        <image class="swiper-image" mode="widthFix" src="../../static/1.jpg">
+        </image>
+      </block>
+    </swiper-item>
+    <swiper-item>
+      <block>
+        <image class="swiper-image" mode="widthFix" src="../../static/2.jpg">
+        </image>
+      </block>
+    </swiper-item>
+    <swiper-item>
+      <block>
+        <image class="swiper-image" mode="widthFix" src="../../static/3.jpg">
+        </image>
+      </block>
+    </swiper-item>
+  </swiper>
+</view>
+
+<!-- 场景 -->
+<view wx:for="{{roomList}}" wx:key="index">
+  <view class="scene">
+    <view class="name">{{item.name}}</view>
+    <view class="record">
+      <view>
+        <text>温度(℃): </text>
+        <text>{{item.wendu}}</text>
+      </view>
+      <view>
+        <text>光照度(lm/㎡): </text>
+        <text>{{item.guangzhao}}</text>
+      </view>
+      <view>
+        <text>Co2(g/L): </text>
+        <text>{{item.co2}}</text>
+      </view>
+      <view>
+        <text>PM2.5(μg/m³): </text>
+        <text>{{item.PM}}</text>
+      </view>
+      <view>
+        <text>LED: </text>
+        <switch></switch>
+      </view>
+    </view>
+  </view>
+ 
+</view>

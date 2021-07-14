@@ -1,0 +1,78 @@
+page {
+  background-color: #e6e6e6;
+  height: 100%;
+}
+
+/* 头像名称 */
+.head {
+  display: flex;
+  align-items: center;
+  height: 200rpx;
+  background-color: #ffffff;
+}
+
+.head>image {
+  width: 80rpx;
+  height: 80rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.head>view>view {
+  padding: 10rpx;
+}
+/* 标签 */
+.tag{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100rpx;
+  background-color: #ffffff;
+  margin: 50rpx 20rpx;
+  border-radius: 50rpx;
+}
+
+/* 弹窗 */
+.dialog-mask {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 10;
+    display: none;
+  }
+  
+  .dialog-container {
+    position: fixed;
+    bottom: 400rpx;
+    width: 650rpx;    /*弹窗布局宽*/
+    height: 650rpx;   /*弹窗布局高，与下面弹出距离transform有关*/
+    margin-left: 50rpx;
+    background: #f8f8f8;
+    transform: translateY(300%);  /*弹框弹出距离，与弹框布局高度有关，如300%表示弹起距离为3倍弹窗高度 */
+    transition: all 0.4s ease;
+    z-index: 12;
+    border-radius: 20rpx;
+  }
+  
+  .dialog--show .dialog-container {
+    transform: translateY(0);
+  }
+  
+  .dialog--show .dialog-mask {
+    display: block;
+  }
+
+  .dialog-record>view>input{
+    background-color: #e6e6e6;
+  }
+  
+  .dialog-button{
+    display: flex;
+    justify-content: space-between;
+    
+  }
+  .dialog-button>button{
+     background-color:#1296db ;
+  }

@@ -1,0 +1,73 @@
+<!--pages/user/user.wxml-->
+<!-- 头像名称 -->
+<view>
+  <view class="head">
+    <image src="/static/wode.png"></image>
+    <view wx:key="index">
+      <view>{{personal.name}}</view>
+      <view>{{personal.address}}</view>
+    </view>
+  </view>
+</view>
+
+<!-- 标签 -->
+<view class="tag" bindtap="tagDialog1">设置预警值</view>
+
+<view class="tag" bindtap="tagDialog3">设置个人信息</view>
+
+<!-- 弹窗 -->
+<view class="dialog {{ showDialog ? 'dialog--show' : '' }}">
+  <view class="dialog-container">
+    <view style='padding:40rpx;'>
+      <view>
+        <view class="dialog-record">
+          <view>
+            <text>温度(℃): </text>
+            <input bindinput="bindKeyInput1" type="number"  value="{{warn.wendu}}" maxlength="5"/>
+          </view>
+          <view>
+            <text>光照度(lx/:lx=lm/㎡): </text>
+            <input bindinput="bindKeyInput2" type="number"  value="{{warn.guangzhao}}" maxlength="5"/>
+          </view>
+          <view>
+            <text>Co2(g/L): </text>
+            <input bindinput="bindKeyInput3" type="number"  value="{{warn.co2}}" maxlength="5"/>
+          </view>
+          <view>
+            <text>PM2.5(μg/m³): </text>
+            <input bindinput="bindKeyInput4" type="number"  value="{{warn.PM}}" maxlength="5"/>
+          </view>
+          <view>
+            <text>LED: </text>
+            <switch  bindchange="switchChecked"></switch>
+          </view>
+        </view>
+        <view class="dialog-button">
+          <button style="width:200rpx;margin: 20rpx;"  bindtap="tagDialog1">取消</button>
+          <button style="width:200rpx;margin: 20rpx;"  bindtap="tagDialog2">确定</button>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view class="dialog {{ displayDialog ? 'dialog--show' : '' }}">
+  <view class="dialog-container">
+    <view style='padding:100rpx;'>
+      <view class="dialog-record">
+        <view>
+          <text>昵称</text>
+          <input bindinput="bindKeyInput5" type="text" value="{{personal.name}}" maxlength="10"/>
+        </view>
+        <view>
+          <text>地址</text>
+          <input bindinput="bindKeyInput6" type="text" value="{{personal.address}}" />
+        </view>
+        <view class="dialog-button">
+          <button style="width:200rpx;margin: 50rpx 20rpx;"  bindtap="tagDialog4">取消</button>
+          <button style="width:200rpx;margin: 50rpx 20rpx;"  bindtap="tagDialog5">确定</button>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

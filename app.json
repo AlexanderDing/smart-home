@@ -1,0 +1,42 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/list/list",
+    "pages/user/user"
+  ],
+  "tabBar": {
+    "color": "#e6e6e6",
+    "selectedColor": "#1296db",
+    "borderStyle": "black",
+    "backgroundColor": "#fff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "/static/首页-false.png",
+        "selectedIconPath": "/static/首页.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/list/list",
+        "iconPath": "/static/列表-false.png",
+        "selectedIconPath": "/static/列表.png",
+        "text": "列表"
+      },
+      {
+        "pagePath": "pages/user/user",
+        "iconPath": "/static/我的-false.png",
+        "selectedIconPath": "/static/wode.png",
+        "text": "个人中心"
+      }
+    ]
+  },
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "智能家居信息管理",
+    "navigationBarTextStyle": "black"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}
